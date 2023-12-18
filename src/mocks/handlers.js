@@ -12,7 +12,7 @@ export const booking = {
 
 export const bookingRes  = {
     ...booking,
-    "price": "460",
+    "price": 460,
     "id": "STR6278FGTL",
     "active": true,
 }

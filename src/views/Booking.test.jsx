@@ -90,17 +90,21 @@ describe("Booking", () => {
         fireEvent.click(screen.getByText(button_text));
         expect(await screen.findByText("See you soon!")).toBeVisible();
         expect(await screen.getByLabelText("Booking number").value).toBe(bookingRes.id);
-        // console.log(await screen.getByLabelText("Booking number").value)
         // console.log(bookingRes.id)
-        // expect(await screen.findByText(bookingRes.price + " sek")).toBeVisible();
-        const expectedPayment = 120 * Number(booking.players) + 100 * Number(booking.lanes);
-
-        // expect(await screen.findByText(bookingRes.price + " sek")).toBeVisible();
-        // console.log(expectedPayment + " sek");
-        // const elements = await screen.findAllByTestId('confirmation__price');
-        // const secondElement = elements[1];
-        console.log(querySelector('.confirmation__price:nth-child(2)'))
-
+        // I don't know why the test fails when I run the test with the following code:
+        // expect(await screen.findByText(`${bookingRes.price} sek`)).toBeVisible();
+        // I get the following error message:
+//         Received element is not visible (element is not in the document):
+//         <p />
+//                  ❯ src/views/Booking.test.jsx:95:68
+//      93|         // console.log(bookingRes.id)
+//      94|         // I don't know why the test fails when I run the test with the following code:
+//      95|         expect(await screen.findByText(`${bookingRes.price} sek`)).toBeVisible();
+//        |                                                                    ^
+//      96|         // I get the following error message:
+//      97|         //
+// I tried everything I could but for some reason the value is not visible, even though the See you soon text as well as
+// the booking number are visible. 
     });
 
 
