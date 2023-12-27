@@ -5,10 +5,8 @@ import Booking from "./Booking";
 import Confirmation from "./Confirmation";
 import { describe, expect } from "vitest";
 import {booking, bookingRes} from "../mocks/handlers";
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 
 const button_text = "strIIIIIike!";
-const x_API_KEY = '738c6b9d-24cf-47c3-b688-f4f4c5747662';
 
 
 describe("Booking", () => {
